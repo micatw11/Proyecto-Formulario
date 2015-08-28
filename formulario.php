@@ -15,7 +15,7 @@
           <?php endforeach; ?>
        </ul>
        <?php endif;?>
-		<H3> Datos Del Documento Nacional de Identidad</H3>
+		<H3> Datos Del Documento Nacional de Identidad </H3>
 <div class="container">
   
   <form method="post" action= "index.php">
