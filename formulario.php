@@ -1,3 +1,6 @@
+<?php session_start();?>
+<?php $_SESSION['mensaje'] = 'Usuario: '.$usuario;?>
+<?php echo $_SESSION['mensaje'];?>
 <!DOCTYPE>
 <html>
 <head>
@@ -15,7 +18,7 @@
           <?php endforeach; ?>
        </ul>
        <?php endif;?>
-		<H3> Datos Del Documento Nacional de Identidad </H3>
+		<H3> Datos Del Documento Nacional de Identidad</H3>
 <div class="container">
   
   <form method="post" action= "index.php">
@@ -29,11 +32,11 @@
 		
 		 <div class="form-group">
       <label for="nombre">Nombres:</label>
-      <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Enter nombre" value="<?php echo $nombre ?>">
+      <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingrese nombre" value="<?php echo $nombre ?>">
     </div>
      <div class="form-group"  >
       <label for="apellido">Apellido:</label>
-      <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Enter apellido" value="<?php echo $apellido ?>">
+      <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Ingrese apellido" value="<?php echo $apellido ?>">
     </div>
    
 
@@ -46,7 +49,7 @@
     
     <div class="form-group">
       <label for="">Numero de Documento:</label>
-      <input type="number" class="form-control" name="documento" placeholder="Enter documento" value="<?php echo $documento ?>">
+      <input type="number" class="form-control" name="documento" placeholder="Ingrese documento" value="<?php echo $documento ?>">
     </div>	
             <div>
 			
@@ -73,7 +76,8 @@
 					<?php echo "<option value=".$j.">".$j."</option>"?>
 					<?php endfor; ?>
 				 </select>
-						
+					
+		
 					<select name="provinciaNacimiento" onchange="sumit()">
 					<?php foreach ($Argentina as $provincia)://Lugar de nacimiento?>
 					<?php echo "<option value=".$provincia.">".$provincia."</option>"?>
@@ -110,7 +114,7 @@
 				
 					<div class="form-group">
 					  <label for="domicilio">Domicilio:</label>
-					  <input type="domicilio" class="form-control" name="domicilio" id="domicilio" placeholder="Enter domicilio" value="<?php echo $domicilio ?>">
+					  <input type="domicilio" class="form-control" name="domicilio" id="domicilio" placeholder="Ingrese domicilio" value="<?php echo $domicilio ?>">
 					</div>
 					
 					
