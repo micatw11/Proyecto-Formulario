@@ -23,13 +23,11 @@
   
   <form method="post" action= "index.php">
     <div class="form-group"  >
-		
-		
-		 <H4> Adjunte su foto</H4>
+
+		<!-- <H4> Adjunte su foto</H4>
 		  <input type="file" name="foto" id="foto" multiple >
 	    </div>
-		 
-		
+		-->
 		 <div class="form-group">
       <label for="nombre">Nombres:</label>
       <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingrese nombre" value="<?php echo $nombre ?>">
