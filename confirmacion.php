@@ -1,8 +1,8 @@
  <?php 
  session_start();
  header('Content-Type: text/html; charset=UTF-8');
- require_once "bd/conexion.php";
- require_once "bd/listado_personas.php";
+	require_once "bd/conexion.php";
+ //require_once "bd/listado_personas.php";
  ?>
 <!DOCTYPE>
 <html>
@@ -16,20 +16,25 @@
 </head>
 <body>
 	
-<div class="container">
   
  <h2>Los Datos se Registraron correctos!</h2>
- <?php 
+  <strong>Los datos de <?php echo "  ".$datos['apellido'].", ".$datos['nombre']." con el DNI ".$datos['documento']."  "  ?>han sido enviados correctamente </strong>
+    <br>
+    <strong>Total de resultados es de <?php echo $_POST['totalPersonas'] ?></strong>
+   <br> <br>
+   <?php 
 
 	$pdo= conectar();
 
 	$pdo= ingresar_variables($pdo,$datos);
 
-	$results = datos_bd($pdo);
+/*	$results = buscar_apellido($pdo,$apellido);
 	tabla ($results);
-		
+		*/
+		$url= 'bd/listado_personas.php';
+		echo '  <a href="'.$url.'?pagina='.$i.'">Ver listado completo </a>  ';
 ?>
-</div>
 
+ 
 </body>
 </html>

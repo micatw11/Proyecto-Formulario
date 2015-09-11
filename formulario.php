@@ -1,6 +1,7 @@
 <?php session_start();?>
-<?php $_SESSION['mensaje'] = 'Usuario: '.$usuario;?>
-<?php echo $_SESSION['mensaje'];?>
+<?php $_SESSION['mensaje'] = 'Usuario: '.$datos['usuario'];?>
+<?php echo $_SESSION['mensaje'];
+$cont=$cont+1;?>
 <!DOCTYPE>
 <html>
 <head>
@@ -11,13 +12,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body >
-	<?php if ($errores): ?>
-       <ul style="color: #f00;">
-          <?php foreach ($errores as $error): ?>
-             <li> <?php echo $error ?> </li>
-          <?php endforeach; ?>
-       </ul>
-       <?php endif;?>
+	
 		<H3> Datos Del Documento Nacional de Identidad</H3>
 <div class="container">
   
@@ -30,11 +25,11 @@
 		-->
 		 <div class="form-group">
       <label for="nombre">Nombres:</label>
-      <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingrese nombre" value="<?php echo $nombre ?>">
+      <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingrese nombre" value="<?php echo $datos[nombre] ?>" onkeypress="return soloLetras(event)">
     </div>
      <div class="form-group"  >
       <label for="apellido">Apellido:</label>
-      <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Ingrese apellido" value="<?php echo $apellido ?>">
+      <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Ingrese apellido" value="<?php echo $datos[apellido] ?>"onkeypress="return soloLetras(event)">
     </div>
    
 
@@ -47,7 +42,7 @@
     
     <div class="form-group">
       <label for="">Numero de Documento:</label>
-      <input type="number" class="form-control" name="documento" placeholder="Ingrese documento" value="<?php echo $documento ?>">
+      <input type="number" class="form-control" name="documento" placeholder="Ingrese documento" value="<?php echo $datos[documento] ?>">
     </div>	
             <div>
 			
@@ -112,7 +107,7 @@
 				
 					<div class="form-group">
 					  <label for="domicilio">Domicilio:</label>
-					  <input type="domicilio" class="form-control" name="domicilio" id="domicilio" placeholder="Ingrese domicilio" value="<?php echo $domicilio ?>">
+					  <input type="domicilio" class="form-control" name="domicilio" id="domicilio" placeholder="Ingrese domicilio" value="<?php echo $datos[domicilio] ?>" onkeypress="return soloLetras(event)">
 					</div>
 					
 					

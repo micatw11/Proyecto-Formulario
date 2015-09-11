@@ -21,7 +21,8 @@
                 <input type="password" placeholder="Contraseña" class="form-control" name="password" required>
               </div>
               <br>
-              <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
+              <button  class="btn btn-primary btn-block" type="submit">Ingresar</button>
+              
             </center>
           </form>
         </div>
